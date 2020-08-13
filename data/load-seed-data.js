@@ -30,7 +30,7 @@ async function run() {
                     INSERT INTO books (title, genre, inventory, is_available)
                     VALUES ($1, $2, $3, $4);
                 `,
-        [book.Title, book.Genre, book.Inventory, book.is_available]);
+        [book.title, book.genre, book.inventory, book.is_available]);
       })
     );
     

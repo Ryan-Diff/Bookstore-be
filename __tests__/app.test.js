@@ -20,31 +20,34 @@ describe('app routes', () => {
     return client.end(done);
   });
 
-  test('returns animals', async() => {
+  test('returns books', async() => {
 
     const expectation = [
-      {
-        Title: 'The Harsh Cry Of The Heroin',
-        Genre: 'Fiction',
-        Inventory: 3,
+      { id: 1,
+        title: 'The Harsh Cry Of The Heroin',
+        genre: 'Fiction',
+        inventory: 3,
         is_available:true,
       },
       {
-        Title: 'The Subtle Art Of Not Giving A F*ck',
-        Genre: 'Self Help',
-        Inventory: 4,
+        id: 2,
+        title: 'The Subtle Art Of Not Giving A F*ck',
+        genre: 'Self Help',
+        inventory: 4,
         is_available:true,
       },
       {
-        Title: 'Broken Monsters',
-        Genre: 'Fantasy',
-        Inventory: 10,
+        id: 3,
+        title: 'Broken Monsters',
+        genre: 'Fantasy',
+        inventory: 10,
         is_available:true,
       },
       {
-        Title: 'The Noma Guide to Fermentation',
-        Genre: 'Cooking',
-        Inventory: 0,
+        id: 4,
+        title: 'The Noma Guide to Fermentation',
+        genre: 'Cooking',
+        inventory: 0,
         is_available:false,
       }
     ];
@@ -54,6 +57,6 @@ describe('app routes', () => {
       .expect('Content-Type', /json/)
       .expect(200);
 
-    expect(data.body).deepEqual(expectation);
+    expect(data.body).toEqual(expectation);
   });
 });
