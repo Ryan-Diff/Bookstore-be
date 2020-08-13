@@ -54,6 +54,6 @@ describe('app routes', () => {
       .expect('Content-Type', /json/)
       .expect(200);
 
-    expect(data.body).toEqual(expectation);
+    expect(data.body).deepEqual(expectation);
   });
 });
