@@ -24,27 +24,33 @@ describe('app routes', () => {
 
     const expectation = [
       {
-        'id': 1,
-        'name': 'bessie',
-        'coolfactor': 3,
-        'owner_id': 1
+        Title: 'The Harsh Cry Of The Heroin',
+        Genre: 'Fiction',
+        Inventory: 3,
+        is_available:true,
       },
       {
-        'id': 2,
-        'name': 'jumpy',
-        'coolfactor': 4,
-        'owner_id': 1
+        Title: 'The Subtle Art Of Not Giving A F*ck',
+        Genre: 'Self Help',
+        Inventory: 4,
+        is_available:true,
       },
       {
-        'id': 3,
-        'name': 'spot',
-        'coolfactor': 10,
-        'owner_id': 1
+        Title: 'Broken Monsters',
+        Genre: 'Fantasy',
+        Inventory: 10,
+        is_available:true,
+      },
+      {
+        Title: 'The Noma Guide to Fermentation',
+        Genre: 'Cooking',
+        Inventory: 0,
+        is_available:false,
       }
     ];
 
     const data = await fakeRequest(app)
-      .get('/animals')
+      .get('/books')
       .expect('Content-Type', /json/)
       .expect(200);
 
