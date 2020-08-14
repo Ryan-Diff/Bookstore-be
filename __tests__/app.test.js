@@ -28,6 +28,7 @@ describe('app routes', () => {
         genre: 'Fiction',
         inventory: 3,
         is_available:true,
+        owner_id:1,
       },
       {
         id: 2,
@@ -35,6 +36,7 @@ describe('app routes', () => {
         genre: 'Self Help',
         inventory: 4,
         is_available:true,
+        owner_id:1,
       },
       {
         id: 3,
@@ -42,6 +44,7 @@ describe('app routes', () => {
         genre: 'Fantasy',
         inventory: 10,
         is_available:true,
+        owner_id:1,
       },
       {
         id: 4,
@@ -49,6 +52,7 @@ describe('app routes', () => {
         genre: 'Cooking',
         inventory: 0,
         is_available:false,
+        owner_id:1,
       }
     ];
 
