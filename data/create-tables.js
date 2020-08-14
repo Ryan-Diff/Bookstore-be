@@ -22,7 +22,8 @@ async function run() {
                     title VARCHAR(512) NOT NULL,
                     genre VARCHAR(512) NOT NULL,
                     inventory INTEGER NOT NULL, 
-                    is_available BOOLEAN NOT NULL
+                    is_available BOOLEAN NOT NULL, 
+                    owner_id INTEGER NOT NULL REFERENCES users(id)
             );
         `);
 
