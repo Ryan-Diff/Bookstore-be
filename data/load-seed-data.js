@@ -3,6 +3,7 @@ const client = require('../lib/client');
 const books = require('./books.js');
 const usersData = require('./users.js');
 const { getEmoji } = require('../lib/emoji.js');
+const  genreData  = require('./genres.js');
 
 run();
 
@@ -21,16 +22,26 @@ async function run() {
         [user.email, user.hash]);
       })
     );
+
+    await Promise.all(
+      genreData.map(genre => {
+        return client.query(`
+                      INSERT INTO genres (type)
+                      VALUES ($1)
+                  `,
+        [genre.type]);
+      })
+    );
       
     const user = users[0].rows[0];
 
     await Promise.all(
       books.map(book => {
         return client.query(`
-                    INSERT INTO books (title, genre, inventory, is_available, owner_id)
+                    INSERT INTO books (title, genre_id, inventory, is_available, owner_id)
                     VALUES ($1, $2, $3, $4, $5);
                 `,
-        [book.title, book.genre, book.inventory, book.is_available, user.id]);
+        [book.title, book.genre_id, book.inventory, book.is_available, user.id]);
       })
     );
     
