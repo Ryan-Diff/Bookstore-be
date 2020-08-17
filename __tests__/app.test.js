@@ -23,7 +23,9 @@ describe('app routes', () => {
   test('returns books', async() => {
 
     const expectation = [
-      { id: 1,
+      { 
+        genre_id:2, 
+        id: 1,
         title: 'The Harsh Cry Of The Heroin',
         genre: 'Fiction',
         inventory: 3,
@@ -31,6 +33,7 @@ describe('app routes', () => {
         owner_id:1,
       },
       {
+        genre_id:6,
         id: 2,
         title: 'The Subtle Art Of Not Giving A F*ck',
         genre: 'Self Help',
@@ -39,6 +42,7 @@ describe('app routes', () => {
         owner_id:1,
       },
       {
+        genre_id:1,
         id: 3,
         title: 'Broken Monsters',
         genre: 'Fantasy',
@@ -47,6 +51,7 @@ describe('app routes', () => {
         owner_id:1,
       },
       {
+        genre_id:5,
         id: 4,
         title: 'The Noma Guide to Fermentation',
         genre: 'Cooking',
